@@ -1,0 +1,42 @@
+﻿@model List<RushHour.Models.User> 
+@{
+    ViewBag.Title = "Index";
+}
+<!Doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Users</title>
+</head>
+<body>
+    <h2>Index</h2>
+    <div>
+        <br />
+        @Html.ActionLink("Create", "Create")
+       
+            <table border="1" cellpadding="12">
+                <tr>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Phone</td>
+                </tr>
+                    @foreach (RushHour.Models.User user in Model)
+                    {
+                        
+                        <tr>
+                            <td>@Html.DisplayFor(model => user.Name)</td>
+                            <td>@Html.DisplayFor(model => user.Email)</td>
+                            <td>@Html.DisplayFor(model => user.Phone)</td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = user.Id }) |
+                                @Html.ActionLink("Details", "Details", new { id = user.Id }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = user.Id })
+                            </td>
+                        </tr>
+                    }
+            </table>
+        
+    </div>
+</body>
+</html>
+
+

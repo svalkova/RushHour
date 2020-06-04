@@ -1,0 +1,42 @@
+﻿@model List<RushHour.Models.Activity>
+@{
+    ViewBag.Title = "List";
+}
+
+
+<!DOCTYPE html>
+<html >
+<head>
+    <meta name="viewport" content="width-device-width"/>
+    <title>Activities</title>
+</head>
+<body>
+    <div>
+        <br /><br />
+        @Html.ActionLink("Create", "Create")<br /><br />
+        
+        <table border="1" cellpadding="12" cellspacing="0">
+            <thead>
+                <th>Name</th>
+                <th>Duration</th>
+                <th>Price</th>
+                <th></th>
+            </th>
+            <tbody>
+                @foreach(RushHour.Models.Activity activity in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => activity.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => activity.Duration)</td>
+                        <td>@Html.DisplayFor(modelItem => activity.Price)</td>
+                        <td>@Html.ActionLink("Edit", "Edit", new { id = activity.Id }) |
+                            @Html.ActionLink("Details", "Details", new { id = activity.Id }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = activity.Id })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

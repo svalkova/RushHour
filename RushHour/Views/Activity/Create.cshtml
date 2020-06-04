@@ -1,0 +1,56 @@
+﻿@model RushHour.Models.Activity
+@{
+    ViewBag.Title = "Create";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    
+    @using (Html.BeginForm())
+    {
+        <h2>Create</h2>
+        <div>
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.Duration)
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.Duration)
+            @Html.ValidationMessageFor(model => model.Duration)
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.Price)
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.Price)
+            @Html.ValidationMessageFor(model => model.Price)
+        </div>
+        <input type="submit" value="Create" />
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+    }
+</body>
+</html>
+
+
+
